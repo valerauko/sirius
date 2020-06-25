@@ -22,9 +22,8 @@
 
 (extend-protocol UnicodeNameLookup
   (Class/forName "[B")
-  (name-of [b] (-> ^bytes b (BigInteger.) (name-table))))
+  (name-of [b] (-> ^bytes b (BigInteger.) (name-table)))
 
-(extend-protocol UnicodeNameLookup
   Character
   (name-of [c] (name-table (int c)))
 
