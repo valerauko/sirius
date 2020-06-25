@@ -30,7 +30,9 @@
   String
   (name-of [s] (-> s (first) (int) (name-table)))
 
-  Integer
   BigInteger
+  (name-of [bi] (-> ^BigInteger bi (.longValue) (name-table)))
+
+  Integer
   Long
   (name-of [i] (name-table i)))
