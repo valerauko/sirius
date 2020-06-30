@@ -1,7 +1,8 @@
 (ns sirius.core
   (:require [clojure.java.io :refer [resource]]
             [clojure.string :refer [split]])
-  (:import [java.math BigInteger]))
+  (:import [java.math BigInteger]
+           [clojure.lang BigInt]))
 
 (set! *warn-on-reflection* true)
 
@@ -22,16 +23,19 @@
 
 (extend-protocol UnicodeNameLookup
   (Class/forName "[B")
-  (name-of [b] (-> ^bytes b (BigInteger.) (name-table)))
+  (name-of [b] (-> ^bytes b BigInteger. name-table))
 
   Character
   (name-of [c] (name-table (int c)))
 
   String
-  (name-of [s] (-> s (first) (int) (name-table)))
+  (name-of [s] (-> s first int name-table))
 
   BigInteger
-  (name-of [bi] (-> ^BigInteger bi (.longValue) (name-table)))
+  (name-of [bi] (-> ^BigInteger bi .longValue name-table))
+
+  BigInt
+  (name-of [bi] (-> ^BigInt bi .longValue name-table))
 
   Integer
   Long
