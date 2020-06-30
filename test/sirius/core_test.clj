@@ -14,7 +14,9 @@
     (testing "Using integer (long)"
       (is (= (name-of 9806) name)))
     (testing "Using BigInteger"
-      (is (= (name-of (BigInteger. "264E" 16)) name)))))
+      (is (= (name-of (BigInteger. "264E" 16)) name)))
+    (testing "Using BigInt"
+      (is (= (name-of 9806N) name)))))
 
 (deftest control-char-test
   (testing "<control> characters get names too"
