@@ -9,11 +9,11 @@ Things would be easier if all the emoji had nice `aria-label` attributes that sh
 [![Clojars Project](https://img.shields.io/clojars/v/net.valerauko/sirius.svg)](https://clojars.org/net.valerauko/sirius)
 
 ```
-[net.valerauko/sirius "1.0.0"]
+[net.valerauko/sirius "1.1.0"]
 ```
 
 ```
-net.valerauko/sirius {:mvn/version "1.0.0"}
+net.valerauko/sirius {:mvn/version "1.1.0"}
 ```
 
 ## Usage
